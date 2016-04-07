@@ -1,11 +1,19 @@
 import React from 'react';
 
-export default class Camper extends React.Component {
-  constructor() {
-    super();
-  }
+const Camper = props => (
+  <tr>
+    <td><img src={props.avatar} /></td>
+    <td>{props.username}</td>
+    <td>{props.recent}</td>
+    <td>{props.alltime}</td>
+  </tr>
+);
 
-  render() {
-    return <h1>Hello, World!</h1>;
-  }
-}
+Camper.propTypes = {
+  username: React.PropTypes.string,
+  alltime: React.PropTypes.number,
+  recent: React.PropTypes.number,
+  avatar: React.PropTypes.string,
+};
+
+export default Camper;
