@@ -12,11 +12,19 @@ td {
 
   font-size: 1.5em;
   font-weight: 300;
+
+  a {
+    color: #EEE;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .avatar {
   width: 3rem;
-  height: 3rem;
   border-radius: 50%;
-  padding: 5px 20px 5px 5px;
+  margin: 5px 20px 5px 5px;
 }

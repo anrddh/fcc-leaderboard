@@ -1,11 +1,16 @@
 import React from 'react';
 import '../styles/camper';
 
-const Camper = props => (
+const Camper = ({ avatar, username, recent, alltime }) => (
   <tr>
-    <td className="username"><img src={props.avatar} className="avatar" />{props.username}</td>
-    <td>{props.recent}</td>
-    <td>{props.alltime}</td>
+    <td className="username">
+      <img src={avatar} className="avatar" />
+      <a href={`https:/freecodecamp.com/${username}`}>
+        {username}
+      </a>
+    </td>
+    <td>{recent}</td>
+    <td>{alltime}</td>
   </tr>
 );
 

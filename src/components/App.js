@@ -1,4 +1,5 @@
 import React from 'react';
+import autobind from 'autobind-decorator';
 
 import CamperList from './CamperList';
 
@@ -17,6 +18,19 @@ export default class App extends React.Component {
     return this.props.alltime;
   }
 
+  @autobind;
+  switchList() {
+    if (this.state.currentList === 'recent') {
+      this.setState({
+        currentList: 'alltime'
+      });
+    } else {
+      this.setState({
+        currentList: 'recent'
+      });
+    }
+  }
+
   render() {
     return (
       <div>
@@ -26,6 +40,8 @@ export default class App extends React.Component {
         <main>
           <CamperList
             list = { this.getList() }
+            switchList = { this.switchList }
+            currentList = { this.state.currentList }
           />
         </main>
       </div>
