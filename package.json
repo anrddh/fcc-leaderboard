@@ -7,6 +7,7 @@
     "build": "webpack -p",
     "dev": "webpack-dev-server --hot --open --inline"
   },
+  "repository": "https://github.com/awesomeaniruddh/fcc-leaderboard",
   "author": "Aniruddh Agarwal",
   "license": "MIT",
   "dependencies": {
@@ -16,16 +17,18 @@
     "babel-preset-react": "^6.5.0",
     "es6-promise": "^3.1.2",
     "isomorphic-fetch": "^2.2.1",
-    "jade": "^1.11.0",
-    "jade-html-loader": "0.0.3",
-    "material-ui": "^0.15.0-alpha.2",
+    "normalize.css": "^4.0.0",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-event-listener": "^0.1.1",
-    "react-tap-event-plugin": "^0.2.2",
     "webpack": "^1.12.14"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "css-loader": "^0.23.1",
+    "cssnano": "^3.5.2",
+    "postcss-loader": "^0.8.2",
+    "precss": "^1.4.0",
+    "style-loader": "^0.13.1",
     "webpack-dev-server": "^1.14.1"
   }
 }

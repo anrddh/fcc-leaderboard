@@ -1,16 +1,19 @@
 // Vendor Dependencies
 import React from 'react';
 import { render } from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import Promise from 'es6-promise';
 import fetch from 'isomorphic-fetch';
 
 // Import App
 import App from './components/App';
+import LoadingScreen from './components/LoadingScreen';
+
+// CSS
+import './styles/loading-screen';
+import './styles/main';
 
 // Init App
 Promise.polyfill();
-injectTapEventPlugin();
 
 const checkStatus = response => {
   if (response.status >= 200 && response.status < 300) {
@@ -24,7 +27,10 @@ const checkStatus = response => {
 
 const parseJSON = response => response.json();
 
-// Render app once both the APIs have responded
+// Render loading screen and then the app once both the APIs have responded
+
+render(<LoadingScreen />, document.getElementById('app'));
+
 fetch('http://fcctop100.herokuapp.com/api/fccusers/top/recent')
   .then(checkStatus)
   .then(parseJSON)

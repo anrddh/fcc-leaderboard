@@ -1,3 +1,7 @@
+var precss       = require('precss');
+var autoprefixer = require('autoprefixer');
+var cssnano      = require('cssnano');
+
 module.exports = {
   entry: {
     client: './src/client.js',
@@ -15,12 +19,15 @@ module.exports = {
         },
       },
       {
-        test: /\.jade$/,
-        loader: 'jade-html',
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader',
       },
     ],
   },
+  postcss: function postcss() {
+    return [cssnano, precss, autoprefixer];
+  },
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.css'],
   },
 };

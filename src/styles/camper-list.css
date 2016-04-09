@@ -1,0 +1,10 @@
+table {
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+}
+
+th {
+  font-weight: 300;
+}
