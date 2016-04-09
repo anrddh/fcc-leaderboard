@@ -1,9 +1,9 @@
 import React from 'react';
+import '../styles/camper';
 
 const Camper = props => (
   <tr>
-    <td><img src={props.avatar} /></td>
-    <td>{props.username}</td>
+    <td className="username"><img src={props.avatar} className="avatar" />{props.username}</td>
     <td>{props.recent}</td>
     <td>{props.alltime}</td>
   </tr>
